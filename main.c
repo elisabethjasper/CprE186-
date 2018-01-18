@@ -28,8 +28,8 @@ int main(int argc, char* argv[]) {
 		printf("First command line argument must be an integer indicating vector lengths\n");
 		return -1;
 	}
-	v1 = (double*) malloc(vLen*sizeof(double));
-	v2 = (double*) malloc(vLen*sizeof(double));
+	v1 = (double*) malloc((vLen+1)*sizeof(double));
+	v2 = (double*) malloc((vLen+1)*sizeof(double));
 
 	printf("Enter a vector of %d numbers on one line separated by spaces\n", vLen);
 	scanV(v1, vLen);
@@ -37,6 +37,7 @@ int main(int argc, char* argv[]) {
         printf("Enter a vector of %d numbers on one line separated by spaces\n", vLen);
 	scanV(v2, vLen);
 
+	printf("Length is %d \n", vLen);
 	dot1 = dot(v1, v2, vLen);
 	dot2 = dot(v2, v1, vLen);
 
